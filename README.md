@@ -25,3 +25,6 @@
 
 ## Статус
 * В разработке
+
+## Основа
+* https://github.com/dotnet-architecture/eShopOnWeb
