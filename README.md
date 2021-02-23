@@ -30,4 +30,4 @@
 * https://github.com/dotnet-architecture/eShopOnWeb
 
 ## Схема базы данных
-![alt text](https://github.com/Venik-com/eShop/blob/develop/eshop_database_schema.gif?raw=true)
+![alt text](https://github.com/Venik-com/eShop/blob/develop/images_for_repository/eshop_database_schema.gif?raw=true)
