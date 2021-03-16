@@ -1,13 +1,13 @@
 ﻿using Microsoft.eShopWeb.ApplicationCore.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
 {
     public class RefPaymentMethod : BaseEntity, IAggregateRoot
     {
+        [Key]
+        public int PaymentMethodCode { get; private set; }
+        // CC=Credit card, etc.
+        public string PaymentMethodDescription { get; private set; }
     }
 }
