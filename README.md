@@ -28,3 +28,6 @@
 
 ## Основа
 * https://github.com/dotnet-architecture/eShopOnWeb
+
+## Схема базы данных
+![alt text](https://github.com/Venik-com/eShop/blob/main/images_for_repository/eshop_database_schema.gif?raw=true)
