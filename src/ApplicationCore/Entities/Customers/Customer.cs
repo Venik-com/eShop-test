@@ -1,4 +1,5 @@
 ﻿using Microsoft.eShopWeb.ApplicationCore.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
@@ -24,5 +25,8 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
         public string TownCity { get; private set; }
         public string CountyOrRegion { get; private set; }
         public string Country { get; private set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<CustomerPaymentMethod> CustomerPaymentMethods { get; set; }
     }
 }

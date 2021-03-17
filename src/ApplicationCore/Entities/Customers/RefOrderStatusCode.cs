@@ -1,4 +1,5 @@
 ﻿using Microsoft.eShopWeb.ApplicationCore.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
@@ -11,5 +12,7 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
         // Cancelled, Completed, etc.
         // TO DO: Сделать для таких значений enum (везде).
         public string OrderStatusDescription { get; private set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

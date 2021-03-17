@@ -1,4 +1,5 @@
 ﻿using Microsoft.eShopWeb.ApplicationCore.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,5 +13,7 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
 
         [ForeignKey("Product")]
         public int ParentProductTypeCode { get; private set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

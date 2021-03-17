@@ -10,5 +10,8 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
 
         [Key]
         public int OrderItemId { get; private set; }
+
+        public virtual Shipment Shipment { get; private set; }
+        public virtual OrderItem OrderItem { get; private set; }
     }
 }

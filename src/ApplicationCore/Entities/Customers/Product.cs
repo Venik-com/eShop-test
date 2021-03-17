@@ -1,4 +1,5 @@
 ﻿using Microsoft.eShopWeb.ApplicationCore.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,5 +19,8 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
 
         [ForeignKey("RefProductType")]
         public int ProductTypeCode { get; private set; }
+
+        public virtual RefProductType RefProductType { get; private set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

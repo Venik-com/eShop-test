@@ -14,5 +14,7 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
 
         [ForeignKey("Invoice")]
         public int InvoiceNumber { get; private set; }
+
+        public virtual Invoice Invoice { get; private set; }
     }
 }

@@ -16,5 +16,8 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
 
         [ForeignKey("RefPaymentMethod")]
         public int PaymentMethodCode { get; private set; }
+
+        public virtual Customer Customer { get; private set; }
+        public virtual RefPaymentMethod RefPaymentMethod { get; private set; }
     }
 }
