@@ -7,17 +7,17 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class CustomerPaymentMethod : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int CustomerPaymentId { get; private set; }
-        public string CrediCardNumber { get; private set; }
-        public string PaymentMethodDetails { get; private set; }
+        public int CustomerPaymentId { get; set; }
+        public string CrediCardNumber { get; set; }
+        public string PaymentMethodDetails { get; set; }
 
         [ForeignKey("Customer")]
-        public int CustomerId { get; private set; }
+        public int CustomerId { get; set; }
 
         [ForeignKey("RefPaymentMethod")]
-        public int PaymentMethodCode { get; private set; }
+        public int PaymentMethodCode { get; set; }
 
-        public virtual Customer Customer { get; private set; }
-        public virtual RefPaymentMethod RefPaymentMethod { get; private set; }
+        public virtual Customer Customer { get; set; }
+        public virtual RefPaymentMethod RefPaymentMethod { get; set; }
     }
 }

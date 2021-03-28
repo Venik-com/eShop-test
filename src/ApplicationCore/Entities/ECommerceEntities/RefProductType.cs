@@ -8,11 +8,11 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class RefProductType : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int ProductTypeCode { get; private set; }
-        public string ProductTypeDescription { get; private set; }
+        public int ProductTypeCode { get; set; }
+        public string ProductTypeDescription { get; set; }
 
         [ForeignKey("Product")]
-        public int ParentProductTypeCode { get; private set; }
+        public int ParentProductTypeCode { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

@@ -9,21 +9,21 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class Shipment : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int ShipmentId { get; private set; }
-        public int ShipmentTrackingNumber { get; private set; }
-        public DateTime ShipmentDate { get; private set; }
+        public int ShipmentId { get; set; }
+        public int ShipmentTrackingNumber { get; set; }
+        public DateTime ShipmentDate { get; set; }
 
         // Shipment description.
-        public string OtherShipmentDetails { get; private set; }
+        public string OtherShipmentDetails { get; set; }
 
         [ForeignKey("Order")]
-        public int OrderId { get; private set; }
+        public int OrderId { get; set; }
 
         [ForeignKey("Invoice")]
-        public int InvoiceNumber { get; private set; }
+        public int InvoiceNumber { get; set; }
 
-        public virtual Invoice Invoice { get; private set; }
-        public virtual Order Order { get; private set; }
+        public virtual Invoice Invoice { get; set; }
+        public virtual Order Order { get; set; }
         public virtual ICollection<ShipmentItem> ShipmentItems { get; set; }
     }
 }

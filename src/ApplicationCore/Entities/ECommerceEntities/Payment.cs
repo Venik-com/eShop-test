@@ -8,13 +8,13 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class Payment : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int PaymentId { get; private set; }
-        public DateTime PaymentDate { get; private set; }
-        public int PaymentAmount { get; private set; }
+        public int PaymentId { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public int PaymentAmount { get; set; }
 
         [ForeignKey("Invoice")]
-        public int InvoiceNumber { get; private set; }
+        public int InvoiceNumber { get; set; }
 
-        public virtual Invoice Invoice { get; private set; }
+        public virtual Invoice Invoice { get; set; }
     }
 }

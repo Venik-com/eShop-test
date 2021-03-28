@@ -9,30 +9,30 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class OrderItem : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int OrderItemId { get; private set; }
-        public string OrderItemQuantity { get; private set; }
-        public decimal OrderItemPrice { get; private set; }
+        public int OrderItemId { get; set; }
+        public string OrderItemQuantity { get; set; }
+        public decimal OrderItemPrice { get; set; }
 
         /// <summary>
         /// RMA = Return Merchandise Authorization.
         /// </summary>
-        public int RMANumber { get; private set; }
-        public string RMAIssuedBy { get; private set; }
-        public DateTime RMAIssuedDate { get; private set; }
-        public string OtherOrderItemDetails { get; private set; }
+        public int RMANumber { get; set; }
+        public string RMAIssuedBy { get; set; }
+        public DateTime RMAIssuedDate { get; set; }
+        public string OtherOrderItemDetails { get; set; }
 
         [ForeignKey("Product")]
-        public int ProductId { get; private set; }
+        public int ProductId { get; set; }
 
         [ForeignKey("Order")]
-        public int OrderId { get; private set; }
+        public int OrderId { get; set; }
 
         [ForeignKey("RefOrderItemStatusCode")]
-        public int OrderItemStatusCode { get; private set; }
+        public int OrderItemStatusCode { get; set; }
 
-        public virtual Product Products { get; private set; }
-        public virtual Order Order { get; private set; }
-        public virtual RefOrderItemStatusCode RefOrderItemStatusCode { get; private set; }
+        public virtual Product Products { get; set; }
+        public virtual Order Order { get; set; }
+        public virtual RefOrderItemStatusCode RefOrderItemStatusCode { get; set; }
         public virtual ICollection<ShipmentItem> ShipmentItems { get; set; }
     }
 }

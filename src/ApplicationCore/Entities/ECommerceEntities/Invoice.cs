@@ -9,18 +9,18 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class Invoice : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int InvoiceNumber { get; private set; }
-        public DateTime InvoiceDate { get; private set; }
-        public string InvoiceDetails { get; private set; }
+        public int InvoiceNumber { get; set; }
+        public DateTime InvoiceDate { get; set; }
+        public string InvoiceDetails { get; set; }
 
         [ForeignKey("Order")]
-        public int OrderId { get; private set; }
+        public int OrderId { get; set; }
 
         [ForeignKey("RefInvoiceStatusCode")]
-        public int InvoiceStatusCode { get; private set; }
+        public int InvoiceStatusCode { get; set; }
 
-        public virtual Order Order { get; private set; }
-        public virtual RefInvoiceStatusCode RefInvoiceStatusCode { get; private set; }
+        public virtual Order Order { get; set; }
+        public virtual RefInvoiceStatusCode RefInvoiceStatusCode { get; set; }
         public virtual ICollection<Shipment> Shipments { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
     }

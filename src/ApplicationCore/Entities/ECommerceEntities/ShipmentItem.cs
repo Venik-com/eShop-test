@@ -6,12 +6,12 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class ShipmentItem : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int ShipmentId { get; private set; }
+        public int ShipmentId { get; set; }
 
         [Key]
-        public int OrderItemId { get; private set; }
+        public int OrderItemId { get; set; }
 
-        public virtual Shipment Shipment { get; private set; }
-        public virtual OrderItem OrderItem { get; private set; }
+        public virtual Shipment Shipment { get; set; }
+        public virtual OrderItem OrderItem { get; set; }
     }
 }

@@ -8,19 +8,19 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
     public class Product : BaseEntity, IAggregateRoot
     {
         [Key]
-        public int ProductId { get; private set; }
-        public int ReturnMerchandiseAuthNumber { get; private set; }
-        public string ProductName { get; private set; }
-        public decimal ProductPrice { get; private set; }
-        public string ProductColor { get; private set; }
-        public string ProductSize { get; private set; }
-        public string ProductDescription { get; private set; }
-        public string OtherProductDetails { get; private set; }
+        public int ProductId { get; set; }
+        public int ReturnMerchandiseAuthNumber { get; set; }
+        public string ProductName { get; set; }
+        public decimal ProductPrice { get; set; }
+        public string ProductColor { get; set; }
+        public string ProductSize { get; set; }
+        public string ProductDescription { get; set; }
+        public string OtherProductDetails { get; set; }
 
         [ForeignKey("RefProductType")]
-        public int ProductTypeCode { get; private set; }
+        public int ProductTypeCode { get; set; }
 
-        public virtual RefProductType RefProductType { get; private set; }
+        public virtual RefProductType RefProductType { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }
