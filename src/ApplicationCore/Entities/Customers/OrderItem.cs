@@ -13,7 +13,9 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.Customers
         public string OrderItemQuantity { get; private set; }
         public decimal OrderItemPrice { get; private set; }
 
-        // RMA = Return Merchandise Authorization.
+        /// <summary>
+        /// RMA = Return Merchandise Authorization.
+        /// </summary>
         public int RMANumber { get; private set; }
         public string RMAIssuedBy { get; private set; }
         public DateTime RMAIssuedDate { get; private set; }
