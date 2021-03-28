@@ -311,7 +311,8 @@ namespace Microsoft.eShopWeb.Infrastructure.Migrations
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "OrderId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction,
+                        onUpdate: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -336,7 +337,8 @@ namespace Microsoft.eShopWeb.Infrastructure.Migrations
                         column: x => x.ShipmentId,
                         principalTable: "Shipments",
                         principalColumn: "ShipmentId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction,
+                        onUpdate: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(

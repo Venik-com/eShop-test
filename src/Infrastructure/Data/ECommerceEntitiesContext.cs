@@ -29,7 +29,12 @@ namespace Microsoft.eShopWeb.Infrastructure.Data
         // we override the OnModelCreating method here.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ShipmentItem>().HasKey(si => new { si.ShipmentId, si.OrderItemId });
+            modelBuilder.Entity<ShipmentItem>()
+                .HasKey(si => new { si.ShipmentId, si.OrderItemId });
+
+            modelBuilder.Entity<ShipmentItem>()
+                .HasOne(p => p.Shipment)
+                .WithMany(b => b.ShipmentItems);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
