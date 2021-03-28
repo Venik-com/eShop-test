@@ -25,6 +25,13 @@ namespace Microsoft.eShopWeb.Infrastructure.Data
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<ShipmentItem> ShipmentItems { get; set; }
 
+       
+        // we override the OnModelCreating method here.
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ShipmentItem>().HasKey(si => new { si.ShipmentId, si.OrderItemId });
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=.\sqlexpress;Initial Catalog=ECommerceStoreDB;Integrated Security=True");
